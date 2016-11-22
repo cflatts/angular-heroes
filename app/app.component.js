@@ -15,6 +15,18 @@ var Hero = (function () {
     return Hero;
 }());
 exports.Hero = Hero;
+var HEROES = [
+    { id: 11, name: 'Mr. Nice' },
+    { id: 12, name: 'Narco' },
+    { id: 13, name: 'Bombasto' },
+    { id: 14, name: 'Celeritas' },
+    { id: 15, name: 'Magneta' },
+    { id: 16, name: 'RubberMan' },
+    { id: 17, name: 'Dynama' },
+    { id: 18, name: 'Dr IQ' },
+    { id: 19, name: 'Magma' },
+    { id: 20, name: 'Tornado' }
+];
 var AppComponent = (function () {
     function AppComponent() {
         this.title = 'Tour of Heroes';
@@ -22,11 +34,12 @@ var AppComponent = (function () {
             id: 1,
             name: 'Windstorm'
         };
+        this.heroes = HEROES;
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n        <h1>{{title}}</h1>\n        <h2>{{hero.name}} details!</h2>\n        <div><label>id: </label>{{hero.id}}</div>\n        <div>\n            <label>name: </label>\n            <input [(ngModel)] = 'hero.name' placeholder = 'name'>\n        </div>"
+            template: "\n        <h1>{{title}}</h1>\n        <h2>My Heroes</h2>\n        <ul class = 'heroes'>\n            <li *ngFor = 'let hero of heroes'>\n                <span class = 'badge'>{{hero.id}}.</span> {{hero.name}}\n            </li>\n        </ul>\n        <h2>{{hero.name}} details!</h2>\n        <div><label>id: </label>{{hero.id}}</div>\n        <div>\n            <label>name: </label>\n            <input [(ngModel)] = 'hero.name' placeholder = 'name'>\n        </div>"
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
@@ -40,5 +53,10 @@ exports.AppComponent = AppComponent;
 //  TEMPLATE tells Angular how to render the view
 //a component class controls the appearance and behavior of a view through its template
 //double curly braces in template read properties from component and render them
-//this is the "interpolation" form of one-way data binding 
+//this is the "interpolation" form of one-way data binding
+//the two way data binding happens because by using [(ngModel)] - anywhere hero.name is found it will change to what the input of the value is
+//* indicates that HTML element and its children are constitute a master template
+//ngFor iterates over heroes array returned by AppComponent.heroes
+//text says take each element in the array and store it in the local variable, and make it available to the corresponding template
+// 
 //# sourceMappingURL=app.component.js.map
