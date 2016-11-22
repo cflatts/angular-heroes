@@ -9,13 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var Hero = (function () {
+    function Hero() {
+    }
+    return Hero;
+}());
+exports.Hero = Hero;
 var AppComponent = (function () {
     function AppComponent() {
+        this.title = 'Tour of Heroes';
+        this.hero = {
+            id: 1,
+            name: 'Windstorm'
+        };
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: '<h1>Hello Angular!</h1>'
+            template: '<h1>{{title}}</h1><h2>{{hero.name}} details!</h2>'
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
@@ -27,5 +38,7 @@ exports.AppComponent = AppComponent;
 //the @Component decorator associated metadata with component
 //  SELECTOR specifies css selector HTML element that represents component
 //  TEMPLATE tells Angular how to render the view
-//a component class controls the appearance and behavior of a view through its template 
+//a component class controls the appearance and behavior of a view through its template
+//double curly braces in template read properties from component and render them
+//this is the "interpolation" form of one-way data binding 
 //# sourceMappingURL=app.component.js.map
