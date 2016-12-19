@@ -30,10 +30,6 @@ var HEROES = [
 var AppComponent = (function () {
     function AppComponent() {
         this.title = 'Tour of Heroes';
-        this.hero = {
-            id: 1,
-            name: 'Windstorm'
-        };
         this.heroes = HEROES;
     }
     AppComponent = __decorate([
@@ -59,5 +55,6 @@ exports.AppComponent = AppComponent;
 //the two way data binding happens because by using [(ngModel)] - anywhere hero.name is found it will change to what the input of the value is
 //* indicates that HTML element and its children are constitute a master template
 //ngFor iterates over heroes array returned by AppComponent.heroes
-//text says take each element in the array and store it in the local variable, and make it available to the corresponding template 
+//text says take each element in the array and store it in the local variable, and make it available to the corresponding template
+// 
 //# sourceMappingURL=app.component.js.map

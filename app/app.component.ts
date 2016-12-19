@@ -90,10 +90,7 @@ const HEROES: Hero[] = [
 
 export class AppComponent {
     title = 'Tour of Heroes'
-    hero: Hero = {
-        id: 1,
-        name: 'Windstorm'
-    }
+    selectedHero: Hero
     heroes = HEROES
 }
 
@@ -120,3 +117,5 @@ export class AppComponent {
 //ngFor iterates over heroes array returned by AppComponent.heroes
 
 //text says take each element in the array and store it in the local variable, and make it available to the corresponding template
+
+//
